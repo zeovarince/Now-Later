@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Now & Later</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <h1>Now <span class="highlight">&</span> Later</h1>
+        </header>
+        <div class="main-container">
+            <section class="left-panel">
+                <div class="panel-header">
+                    <h2>Now (Todo list)</h2>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="todoInput"placeholder="Fokus utama...">
+                    <button onclick="addItem('todoInput', 'todoList')">Tambah Tugas</button>
+                </div>
+                <ul id="todoList" class="list-container"></ul>
+            </section>
+
+            <section class="center-panel">
+                <div class="timer-card">
+                    <h3>Focus Timer</h3>
+                    <div id="timerDisplay" class="timer-large">00:00:00</div>
+                    <p id="modeStatus" class="mode-badge">Mode:<strong>Fokus</strong></p>
+                    <div class="settings-area">
+                        <div class="setting-row">
+                            <label>Waktu Fokus:</label>
+                            <div class="mini-inputs">
+                                <input type="number" id="focusJam" placeholder="00" min="0"> :
+                                <input type="number" id="focusMenit" placeholder="25" min="0"> :
+                                <input type="number" id="focusDetik" placeholder="00" min="0">
+                            </div>
+                        </div>
+                        <div class="setting-row">
+                            <label>Waktu Istirahat:</label>
+                            <div class="mini-inputs">
+                                <input type="number" id="restJam" placeholder="00" min="0"> :
+                                <input type="number" id="restMenit" placeholder="05" min="0"> :
+                                <input type="number" id="restDetik" placeholder="00" min="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="controls-wrapper">
+                        <div class="primary-controls">
+                            <button class="btn-main" id="startBtn">Start</button>
+                            <button class="btn-sec" id="pauseBtn">Pause</button>
+                            <button class="btn-danger"id="resetBtn">Reset</button>
+                        </div>
+                        <button class="btn-wide" id="modeBtn">Waktu Istirahat</button>
+                    </div>
+
+                    <hr class="divider">
+                    <div class="stats-container">
+                        <div class="stat-box">
+                            <small>Total Fokus</small> <span id="totalFocusTime">0j 0m</span>
+                        </div>
+                        <div class="stat-box">
+                            <small>Total Istirahat</small> <span id="totalRestTime">0j 0m</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="right-panel">
+                <div class="panel-header">
+                    <h2>Later (Distraction)</h2>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="laterInput" placeholder="Distractions">
+                    <button onclick="addItem('laterInput', 'laterList')">Tambah Distraction</button>
+                </div>
+                <ul id="laterList" class="list-container"></ul>
+            </section>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
